@@ -1,0 +1,22 @@
+name: "my_dbt_project"
+version: "1.0.0"
+
+profile: "my_dbt_profile" # Mantenemos tu perfil actual
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+# --- NUEVA CONFIGURACIÓN DE MODELOS ---
+models:
+  my_dbt_project:
+    # Capa de limpieza: se crean como vistas para no duplicar datos físicamente
+    staging:
+      +materialized: view
+      +schema: staging
+    # Capa de negocio: se crean como tablas para que las consultas sean rápidas
+    core:
+      +materialized: table
+      +schema: core

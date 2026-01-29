@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    # En MySQL dbt NO usa 'database'.
+    # El nombre 'DatabaseM3PI' debe ir en 'schema'.
+    schema: DatabaseM3PI
+    tables:
+      - name: mysql_currency_raw

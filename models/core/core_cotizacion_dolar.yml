@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: core_cotizacion_dolar
+    description: "Tabla de cotizaciones USD → ARS en esquema core"
+    columns:
+      - name: fecha
+        tests:
+          - not_null
+          - unique
+      - name: cotizacion_en_pesos
+        tests:
+          - not_null
