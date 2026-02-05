@@ -5,8 +5,8 @@ import s3_connection
 
 def main():
 
-    bucket_name="m3-pi-raw-data"
-    csv_file="AB_NYC.csv"
+    bucket_name="m3-pi-bucket"
+    csv_file="NYC_CSV/AB_NYC.csv"
 
     # Descargamos el archivo CVS como string desde el bucket
     s3 = s3_connection.connect_to_s3()

@@ -1,7 +1,7 @@
 -- models/stg_listings.sql
 
 with source as (
-    select * from {{ source('raw_data', 'mysql_csv_raw') }}
+    select * from `raw`.`mysql_csv_raw`
 ),
 
 casted as (

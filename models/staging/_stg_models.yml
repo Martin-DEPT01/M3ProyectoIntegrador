@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_listings
+    description: "One Big Table de alquileres en NYC"
+    columns:
+      - name: listing_id
+        description: "Campo con identificador unico"
+        tests:
+          - unique
+      - name: last_review
+        tests:
+          - not_null

@@ -3,11 +3,11 @@ version: "1.0.0"
 
 profile: "my_dbt_profile" # Mantenemos tu perfil actual
 
-model-paths: ["models"]
-target-path: "target"
-clean-targets:
+model-paths: ["models"] # carpeta donde están los archivos .sql
+target-path: "target" # carpeta que se crea con SQL compilado y resultado de ejecuciones
+clean-targets: # indica que carpetas se van a borrar cuando se ejecute dbt clean
   - "target"
-  - "dbt_modules"
+  - "dbt_packages"
 
 # --- NUEVA CONFIGURACIÓN DE MODELOS ---
 models:

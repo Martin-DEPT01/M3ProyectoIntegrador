@@ -9,7 +9,7 @@ def main():
     hoy = date.today()
     ayer = hoy - timedelta(days=1)
 
-    bucket_name="m3-pi-raw-data"
+    bucket_name="m3-pi-bucket"
     json_key=f"cotizacion_dolar/{ayer}.json"
 
     # Descargamos el json desde S3

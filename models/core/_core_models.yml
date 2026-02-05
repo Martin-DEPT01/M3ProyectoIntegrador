@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_cotizacion_dolar
+    description: "Tabla de cotizaciones USD → ARS en esquema core"
+    columns:
+      - name: fecha
+        tests:
+          - not_null
+          - unique
+      - name: cotizacion_en_pesos
+        tests:
+          - not_null
+  - name: fact_listings
+    description: "Tabla de hecho en esquema estrella"
+    columns:
+      - name: id_neighbourhood
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_neighbourhoods')
+              field: id_neighbourhood
+      - name: id_room_type
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_room_types')
+              field: id_room_type

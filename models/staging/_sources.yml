@@ -1,6 +1,7 @@
 version: 2
 sources:
   - name: raw_data
-    schema: DatabaseM3PI # El nombre de la base en RDS
+    schema: raw # El nombre de la base en RDS
     tables:
       - name: mysql_csv_raw
+      - name: mysql_currency_raw

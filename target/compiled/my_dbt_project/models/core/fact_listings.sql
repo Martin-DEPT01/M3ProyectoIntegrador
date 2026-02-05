@@ -1,15 +1,15 @@
-{{ config(unique_key='listing_id') }}
+
 
 with obt_data as (
-    select * from {{ ref('stg_listings') }} 
+    select * from `staging`.`stg_listings` 
 ), 
 
 dimension_neighbourhoods as (
-    select * from {{ ref('dim_neighbourhoods') }}
+    select * from `core`.`dim_neighbourhoods`
 ),
 
 dimension_room_type as (
-    select * from {{ ref('dim_room_types') }}
+    select * from `core`.`dim_room_types`
 )
 
 select 
@@ -27,4 +27,4 @@ from obt_data obt
 left join dimension_neighbourhoods dn 
 on obt.neighbourhood = dn.neighbourhood and obt.neighbourhood_group = dn.neighbourhood_group
 left join dimension_room_type drt
-on obt.room_type = drt.room_type 
+on obt.room_type = drt.room_type

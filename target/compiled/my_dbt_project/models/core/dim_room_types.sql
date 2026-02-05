@@ -1,9 +1,9 @@
-{{ config(unique_key='room_type') }}
+
 
 with distinct_room_type as (
 select distinct
     room_type
-from {{ ref('stg_listings') }}
+from `staging`.`stg_listings`
 )
 
 select

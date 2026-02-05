@@ -1,10 +1,10 @@
-{{ config(unique_key='neighbourhood') }}
+
 
 with distinct_neighbourhood as (
 select distinct
     neighbourhood,
     neighbourhood_group
-from {{ ref('stg_listings') }}
+from `staging`.`stg_listings`
 )
 
 select

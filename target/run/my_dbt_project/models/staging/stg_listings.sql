@@ -1,7 +1,12 @@
--- models/stg_listings.sql
+
+  create view `staging`.`stg_listings__dbt_tmp`
+    
+    
+  as (
+    -- models/stg_listings.sql
 
 with source as (
-    select * from {{ source('raw_data', 'mysql_csv_raw') }}
+    select * from `raw`.`mysql_csv_raw`
 ),
 
 casted as (
@@ -27,3 +32,4 @@ casted as (
 )
 
 select * from casted
+  );

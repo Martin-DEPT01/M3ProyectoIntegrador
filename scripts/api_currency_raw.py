@@ -40,7 +40,7 @@ def main():
     # Subir el json al bucket
     s3 = s3_connection.connect_to_s3()
 
-    bucket_name="m3-pi-raw-data"
+    bucket_name="m3-pi-bucket"
     s3_key=f"cotizacion_dolar/{ayer}.json"
 
     s3.put_object(

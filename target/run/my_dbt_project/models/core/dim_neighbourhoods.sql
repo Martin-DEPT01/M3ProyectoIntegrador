@@ -1,10 +1,21 @@
-{{ config(unique_key='neighbourhood') }}
+
+  
+    
+
+  create  table
+    `core`.`dim_neighbourhoods__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
 
 with distinct_neighbourhood as (
 select distinct
     neighbourhood,
     neighbourhood_group
-from {{ ref('stg_listings') }}
+from `staging`.`stg_listings`
 )
 
 select
@@ -12,3 +23,6 @@ select
     neighbourhood,
     neighbourhood_group
 from distinct_neighbourhood
+    )
+
+  
