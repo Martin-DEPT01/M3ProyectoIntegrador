@@ -10,7 +10,7 @@ def main():
     CSV_PATH = os.getenv("DATA_PATH")
 
     bucket_name = "m3-pi-bucket"
-    file_path = f"{CSV_PATH}"
+    file_path = f"{CSV_PATH}/AB_NYC.csv"
     s3_path = "NYC_CSV/AB_NYC.csv"
 
 

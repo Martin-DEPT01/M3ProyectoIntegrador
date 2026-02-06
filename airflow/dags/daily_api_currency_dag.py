@@ -24,7 +24,7 @@ with DAG(
 
     run_api_currency_elt = BashOperator(
         task_id="run_api_currency_elt",
-        bash_command='python /opt/airflow/scripts/api_currency_elt.py'
+        bash_command='python /opt/airflow/scripts/api_currency_elt.py',
         outlets=[DS_COTIZACIONES] # <--- Avisa que actualizó cotizaciones
     )
 

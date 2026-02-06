@@ -26,10 +26,8 @@ with DAG(
 
     run_csv_elt = BashOperator(
         task_id="run_csv_elt",
-        bash_command='python /opt/airflow/scripts/csv_elt.py'
+        bash_command='python /opt/airflow/scripts/csv_elt.py',
         outlets=[DS_CSV_MENSUAL] # <--- Gatillo para el DAG 3
     )
 
     run_csv_raw >> run_csv_elt
-
-
