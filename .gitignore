@@ -21,3 +21,6 @@ Thumbs.db
 # IDEs / editores
 .vscode/
 .idea/
+
+# Ignorar credenciales de dbt
+**/profiles.yml
