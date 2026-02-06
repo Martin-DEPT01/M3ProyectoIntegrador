@@ -33,16 +33,25 @@ El ecosistema está desplegado sobre infraestructura de **AWS**, orquestado medi
 ## 📂 Estructura del Repositorio
 
 ```text
-├── airflow/
+├── airflow/                 # AVANCE4: Logica de orquestacion del pipeline
+│   ├── config/
 │   ├── dags/                # Definición de DAGs (Diarios/Mensuales)
-│   ├── scripts/             # Lógica de ingesta (S3 to RDS)
-│   ├── docker-compose.yaml  # Infraestructura de Airflow como Código
-│   └── .env                 # Variables de entorno (Ignorado en Git)
-├── dbt_project/             # Lógica de Transformación SQL
+│   ├── logs/
+│   ├── plugins/
+│   ├── scripts/             # AVANCE2: Lógica ELT (S3 to RDS)
+│   └── docker-compose.yaml  # Infraestructura de Airflow como Código
+├── dbt/                     # AVANCE3: Lógica de Transformación SQL y tests
 │   ├── models/
 │   │   ├── staging/         # Modelos de limpieza inicial
 │   │   └── core/            # Modelado Dimensional (Hechos y Dimensiones)
-│   └── profiles.yml         # Configuración de conexión a RDS
+│   ├── macros/
+│   └── dbt_project.yml      # Configuracion global del modelo
+├── data/
+│   └── AB_NYC.csv           # Datos de entrada . Alquileres en NYC
+├── img/
+├── Documento Tecnico.docx   # AVANCE1: especificaciones y decisiones tecnologicas
+├── Reporte_de_Negocio.ipynb
+├── .gitignore
 └── README.md
 ```
 
